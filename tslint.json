@@ -1,0 +1,60 @@
+{
+  "extends": [
+    "tslint:recommended",
+    "tslint-react",
+    "tslint-eslint-rules",
+    "tslint-config-prettier"
+  ],
+  "jsRules": {
+    "max-line-length": {
+      "options": [
+        100
+      ]
+    }
+  },
+  "linterOptions": {
+    "exclude": [
+      "**/*.js",
+      "**/*.json"
+    ]
+  },
+  "rules": {
+    "interface-name": false,
+    "interface-over-type-literal": false,
+    "max-line-length": {
+      "options": [100]
+    },
+    "max-classes-per-file": [true, 5],
+    "member-access": [true, "no-public"],
+    "member-ordering": [
+      true,
+      {
+        "order": [
+          "public-constructor",
+          "protected-constructor",
+          "private-constructor",
+          "public-instance-field",
+          "protected-instance-field",
+          "private-instance-field",
+          "public-static-field",
+          "protected-static-field",
+          "private-static-field",
+          "public-static-method",
+          "protected-static-method",
+          "private-static-method",
+          "public-instance-method",
+          "protected-instance-method",
+          "private-instance-method"
+        ]
+      }
+    ],
+    "jsx-boolean-value": false,
+    "variable-name": [
+      true,
+      "ban-keywords",
+      "check-format",
+      "allow-leading-underscore",
+      "allow-pascal-case"
+    ]
+  }
+}
