@@ -3,13 +3,13 @@ import App, { Container } from 'next/app';
 import getConfig from 'next/config';
 
 const { publicRuntimeConfig } = getConfig();
-console.log('publicRuntimeConfig', publicRuntimeConfig);
-const { API_URL } = publicRuntimeConfig;
+const { API_URL, NODE_ENV } = publicRuntimeConfig;
 
 export default class MyApp extends App<any, any> {
   static defaultProps = {
     config: {
       baseURL: API_URL,
+      NODE_ENV: NODE_ENV,
     },
   };
 
@@ -30,8 +30,7 @@ export default class MyApp extends App<any, any> {
   }
 
   render() {
-    const { props } = this as any;
-    const { Component, pageProps, config } = props;
+    const { Component, pageProps, config } = this.props;
     return (
       <Container>
         <Component {...pageProps} {...config} />
