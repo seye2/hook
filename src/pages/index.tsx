@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 interface Props {
-  title: string;
+  baseURL: string;
 }
 
 export default class extends React.Component<Props, {}> {

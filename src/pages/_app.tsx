@@ -1,13 +1,15 @@
 import React from 'react';
 import App, { Container } from 'next/app';
+import getConfig from 'next/config';
 
-import { baseURL } from '../api';
-import { GlobalStyle } from '../style/common';
+const { publicRuntimeConfig } = getConfig();
+console.log('publicRuntimeConfig', publicRuntimeConfig);
+const { API_URL } = publicRuntimeConfig;
 
 export default class MyApp extends App<any, any> {
   static defaultProps = {
     config: {
-      baseURL: baseURL,
+      baseURL: API_URL,
     },
   };
 
@@ -32,7 +34,6 @@ export default class MyApp extends App<any, any> {
     const { Component, pageProps, config } = props;
     return (
       <Container>
-        <GlobalStyle />
         <Component {...pageProps} {...config} />
       </Container>
     );

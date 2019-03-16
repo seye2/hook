@@ -5,6 +5,7 @@ const path = require('path');
 const withCSS = require('@zeit/next-css');
 const { exportPathMap } = require('nextjs-export-path-map');
 const Dotenv = require('dotenv-webpack');
+import { baseURL } from '../api';
 
 module.exports = withTypescript({
   webpack(config, options) {
@@ -20,6 +21,9 @@ module.exports = withTypescript({
     ];
 
     return config;
+  },
+  publicRuntimeConfig: {
+    API_URL: baseURL,
   },
   cssModules: true,
   exportPathMap: exportPathMap.bind(null, path.join(__dirname, 'pages')),

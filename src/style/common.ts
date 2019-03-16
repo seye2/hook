@@ -58,30 +58,5 @@ export const GlobalStyle = createGlobalStyle`
     legend {
       display: none;
     }
-    
-    .header{
-        position:fixed;
-        top:0;left:0;
-        width:100%;height:70px;
-        background-color:#003366;
-    }
-    
-    .gnb{
-        margin:10PX 0 0 0;
-        padding:10PX 0;
-        text-align:center;
-        border:1px solid #e9e9e9;
-    }
-    
-    .contents{
-        margin:40px 0;
-        text-align:center;
-    }
-    
-    .footer{
-        margin:0;
-        padding:14px 0;
-        text-align:center;
-        border:1px solid #000000;
-    }
+    body{background:red;}
 `;
