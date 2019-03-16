@@ -1,13 +1,14 @@
 import React from 'react';
 import App, { Container } from 'next/app';
-import {baseURL} from '../api'
 
-//console.log(assetPrefix);
+import { baseURL } from '../api';
+import { GlobalStyle } from '../style/common';
+
 export default class MyApp extends App<any, any> {
   static defaultProps = {
     config: {
-      baseURL: baseURL
-    }
+      baseURL: baseURL,
+    },
   };
 
   static async getInitialProps({ Component, router, ctx }) {
@@ -31,6 +32,7 @@ export default class MyApp extends App<any, any> {
     const { Component, pageProps, config } = props;
     return (
       <Container>
+        <GlobalStyle />
         <Component {...pageProps} {...config} />
       </Container>
     );
