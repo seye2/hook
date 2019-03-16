@@ -13,7 +13,7 @@ const app = next({
 });
 
 const handle = app.getRequestHandler();
-console.log('server');
+
 app.prepare().then(() => {
   server
     .get('*', (req, res) => {
