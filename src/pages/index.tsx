@@ -7,6 +7,6 @@ export default class extends React.Component<Props, {}> {
     super(props);
   }
   render() {
-    return <div>test</div>;
+    return <div>{this.props.baseURL}</div>;
   }
 }
