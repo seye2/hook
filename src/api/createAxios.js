@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { publicRuntimeConfig } from '../../server/nextConfig';
+import { publicRuntimeConfig } from '../../server/getNextConfig';
 
 const { API_URL, NODE_ENV } = publicRuntimeConfig;
 
