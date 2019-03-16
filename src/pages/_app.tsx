@@ -1,8 +1,15 @@
 import React from 'react';
 import App, { Container } from 'next/app';
+import {baseURL} from '../api'
 
 //console.log(assetPrefix);
 export default class MyApp extends App<any, any> {
+  static defaultProps = {
+    config: {
+      baseURL: baseURL
+    }
+  };
+
   static async getInitialProps({ Component, router, ctx }) {
     let pageProps = {};
 
@@ -22,7 +29,6 @@ export default class MyApp extends App<any, any> {
   render() {
     const { props } = this as any;
     const { Component, pageProps, config } = props;
-
     return (
       <Container>
         <Component {...pageProps} {...config} />
