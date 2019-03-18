@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import api from '../api/createAxios';
+import Index from '../components/index'
 
 interface Props {
   NODE_ENV: string,
@@ -18,6 +19,7 @@ export default class extends React.Component<Props, {}> {
   render() {
     return (
       <>
+        <Index></Index>
         <div>{this.props.baseURL}</div>
         <div>{this.props.NODE_ENV}</div>
       </>

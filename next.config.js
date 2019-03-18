@@ -1,5 +1,6 @@
 // next.config.js
 const withPlugins = require('next-compose-plugins');
+const withCSS = require('@zeit/next-css');
 const withTypescript = require('@zeit/next-typescript');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const path = require('path');
@@ -22,19 +23,17 @@ const API_URL = NODE_ENV === 'production' ? API_PROD_URL : API_DEV_URL;
 const nextConfig = {
   generateBuildId: async () => {
     // //////////////////////////////////////////
-    // Next.js uses a constant generated at build time to identify 
+    // Next.js uses a constant generated at build time to identify
     // which version of your application is being served.
     // This can cause problems in multi-server deployments
     // when next build is ran on every server.
     // In order to keep a static build id between
     // builds you can provide the generateBuildId function:
     // //////////////////////////////////////////
-
     // When process.env.YOUR_BUILD_ID is undefined we fall back to the default
     // if (process.env.YOUR_BUILD_ID) {
     //   return process.env.YOUR_BUILD_ID
     // }
-
     // return null
   },
   publicRuntimeConfig: {
@@ -46,7 +45,8 @@ const nextConfig = {
 module.exports = withPlugins(
   [
     [
-      withTypescript, {
+      withTypescript,
+      {
         webpack(config, options) {
           // Do not run type checking twice:
           if (options.isServer) config.plugins.push(new ForkTsCheckerWebpackPlugin());
@@ -63,8 +63,9 @@ module.exports = withPlugins(
         },
         cssModules: true,
         exportPathMap: exportPathMap.bind(null, path.join(__dirname, 'pages')),
-      }
-    ]
+      },
+    ],
+    [withCSS, {}],
   ],
   nextConfig
 );
