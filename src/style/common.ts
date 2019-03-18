@@ -1,9 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-export const GlobalStyle = createGlobalStyle`
-    @import url(https://cdn.rawgit.com/theeluwin/NotoSansKR-Hestia/master/stylesheets/NotoSansKR-Hestia.css);
-    
-    /* css reset */
+export default createGlobalStyle`
     html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
     blockquote, pre, a, abbr, acronym, address, big, cite, code,
     del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub,
