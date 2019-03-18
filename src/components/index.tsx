@@ -7,7 +7,9 @@ import DynamicComponentWithCustomLoading from '../common/calendar/DayPickerRange
 //   loading: () => <p>...</p>,
 // });
 
-class Index extends React.Component {
+interface IndexProps {}
+
+class Index extends React.Component<IndexProps> {
   render() {
     return <DynamicComponentWithCustomLoading />;
   }

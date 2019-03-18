@@ -1,9 +1,11 @@
 import * as moment from 'moment';
-import * as React from 'react';
 import dynamic from 'next/dynamic';
+import * as React from 'react';
 
 import 'react-dates/initialize';
 import './_datepicker.css';
+
+interface DayPickerRangeProps {}
 
 const DynamicDayPickerRangeController = dynamic(
   () => import('react-dates').then(module => module.DayPickerRangeController),
@@ -17,7 +19,7 @@ const DynamicDayPickerRangeController = dynamic(
 );
 // import { DayPickerRangeController } from 'react-dates';
 
-class Index extends React.Component {
+class DayPickerRange extends React.Component<DayPickerRangeProps> {
   render() {
     return (
       <DynamicDayPickerRangeController
@@ -31,4 +33,4 @@ class Index extends React.Component {
   }
 }
 
-export default Index;
+export default DayPickerRange;

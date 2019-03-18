@@ -1,15 +1,20 @@
-import React from 'react';
 import App, { Container } from 'next/app';
 import getConfig from 'next/config';
+import React from 'react';
 
 const { publicRuntimeConfig } = getConfig();
 const { API_URL, NODE_ENV } = publicRuntimeConfig;
 
-export default class MyApp extends App<any, any> {
+interface MyAppProps {
+  config: {};
+  pageProps: {};
+}
+
+export default class MyApp extends App<MyAppProps> {
   static defaultProps = {
     config: {
       baseURL: API_URL,
-      NODE_ENV: NODE_ENV,
+      NODE_ENV,
     },
   };
 
