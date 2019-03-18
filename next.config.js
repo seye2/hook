@@ -65,7 +65,12 @@ module.exports = withPlugins(
         exportPathMap: exportPathMap.bind(null, path.join(__dirname, 'pages')),
       },
     ],
-    [withCSS, {}],
+    [
+      withCSS,
+      {
+        cssModules: false,
+      },
+    ],
   ],
   nextConfig
 );
