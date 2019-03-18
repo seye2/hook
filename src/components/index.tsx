@@ -1,32 +1,14 @@
 import * as moment from 'moment';
+import dynamic from 'next/dynamic';
 import * as React from 'react';
-import {
-  DateRangePicker,
-  DayPickerRangeController,
-  DayPickerSingleDateController,
-  isInclusivelyAfterDay,
-  isInclusivelyBeforeDay,
-  isNextDay,
-  isSameDay,
-  SingleDatePicker,
-  toISODateString,
-  toLocalizedDateString,
-  toMomentObject,
-} from 'react-dates';
-import 'react-dates/initialize';
-import 'react-dates/lib/css/_datepicker.css';
+
+const DynamicComponentWithCustomLoading = dynamic(() => import('../common/DayPickerRange'), {
+  loading: () => <p>...</p>,
+});
 
 class Index extends React.Component {
   render() {
-    return (
-      <DayPickerRangeController
-        startDate={moment()}
-        endDate={moment()}
-        onDatesChange={arg => {}}
-        focusedInput="startDate"
-        onFocusChange={arg => {}}
-      />
-    );
+    return <DynamicComponentWithCustomLoading />;
   }
 }
 
