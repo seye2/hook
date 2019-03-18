@@ -61,7 +61,6 @@ module.exports = withPlugins(
 
           return config;
         },
-        cssModules: true,
         exportPathMap: exportPathMap.bind(null, path.join(__dirname, 'pages')),
       },
     ],
@@ -69,6 +68,9 @@ module.exports = withPlugins(
       withCSS,
       {
         cssModules: false,
+        cssLoaderOptions: {
+          importLoaders: 1,
+        },
       },
     ],
   ],

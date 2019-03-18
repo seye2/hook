@@ -14,7 +14,7 @@ export default createGlobalStyle`
       border: 0;
       font-family: 'Roboto', 'Noto Sans Korean', sans-serif;
     }
-    
+
     article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
       display: block;
     }
@@ -55,5 +55,5 @@ export default createGlobalStyle`
     legend {
       display: none;
     }
-    body{background:red;}
+    body{background:green;}
 `;
