@@ -19,11 +19,13 @@
     ]
   },
   "rules": {
+    "no-empty":false,
     "interface-name": false,
     "interface-over-type-literal": false,
     "max-line-length": {
       "options": [100]
     },
+    "object-literal-sort-keys":false,
     "max-classes-per-file": [true, 5],
     "member-access": [true, "no-public"],
     "member-ordering": [

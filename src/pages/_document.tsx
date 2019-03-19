@@ -6,9 +6,9 @@ import Document, { Head, Html, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 import GlobalStyle from '../style/common';
 
-interface MyDocumentProps {}
+type Props = {};
 
-export default class MyDocument extends Document<MyDocumentProps> {
+export default class MyDocument extends Document<Props> {
   static async getInitialProps(ctx) {
     const sheet = new ServerStyleSheet();
     const originalRenderPage = ctx.renderPage;

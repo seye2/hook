@@ -1,24 +1,22 @@
 import React from 'react';
 
-interface Props {
+type Props = {
   statusCode: string;
-}
+};
 
-class Error extends React.Component<Props> {
-  static getInitialProps({ res, err }) {
-    const statusCode = res ? res.statusCode : err ? err.statusCode : null;
-    return { statusCode };
-  }
+const Error = (props: Props) => {
+  return (
+    <p>
+      {this.props.statusCode
+        ? `An error ${this.props.statusCode} occurred on server`
+        : 'An error occurred on client'}
+    </p>
+  );
+};
 
-  render() {
-    return (
-      <p>
-        {this.props.statusCode
-          ? `An error ${this.props.statusCode} occurred on server`
-          : 'An error occurred on client'}
-      </p>
-    );
-  }
-}
+Error.getInitialProps = async ({ res, err }) => {
+  const statusCode = res ? res.statusCode : err ? err.statusCode : null;
+  return { statusCode };
+};
 
 export default Error;
