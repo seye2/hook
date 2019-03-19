@@ -90,6 +90,7 @@
   "lint-staged": {
     "*.js": [
       "eslint --fix",
+      "tslint --fix",
       "git add"
     ]
   }
