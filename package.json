@@ -78,7 +78,7 @@
     "url": "^0.11.0"
   },
   "scripts": {
-    "dev": "cross-env NODE_ENV=development node ./server/index",
+    "dev": "cross-env node ./server/index .env .env.development",
     "build": "next build",
     "start": "next start"
   },
