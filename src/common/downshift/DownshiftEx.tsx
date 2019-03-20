@@ -2,7 +2,7 @@ import Downshift from 'downshift';
 import React from 'react';
 import { render } from 'react-dom';
 
-type Props = {};
+interface DownshiftExProps {}
 
 const items = [
   { value: 'apple' },
@@ -12,11 +12,12 @@ const items = [
   { value: 'banana' },
 ];
 
-const DownshiftEx = (props: Props) => {
-  const onChange = selection => {};
-  const itemToString = item => (item ? item.value : '');
+const DownshiftEx = (props: DownshiftExProps) => {
   return (
-    <Downshift onChange={onChange} itemToString={itemToString}>
+    <Downshift
+      onChange={selection => alert(`You selected ${selection.value}`)}
+      itemToString={item => (item ? item.value : '')}
+    >
       {({
         getInputProps,
         getItemProps,

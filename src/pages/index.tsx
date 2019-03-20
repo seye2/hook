@@ -1,24 +1,28 @@
+import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import React, { useEffect } from 'react';
 import api from '../api/createAxios';
-import Index from '../components/index';
+import Index from '../components/index'
 
-type Props = {
-  NODE_ENV: string;
+interface Props {
+  NODE_ENV: string,
   baseURL: string;
-};
+}
 
-export default (props: Props) => {
-  useEffect(() => {
+export default class extends React.Component<Props, {}> {
+  constructor(props) {
+    super(props);
+  }
+  componentDidMount() {
     api.get('/posts/42');
-  }, []);
-
-  return (
-    <>
-      <Index />
-      <div>{this.props.baseURL}</div>
-      <div>{this.props.NODE_ENV}</div>
-    </>
-  );
-};
+  }
+  render() {
+    return (
+      <>
+        <Index></Index>
+        <div>{this.props.baseURL}</div>
+        <div>{this.props.NODE_ENV}</div>
+      </>
+    );
+  }
+}

@@ -5,12 +5,12 @@ import React from 'react';
 const { publicRuntimeConfig } = getConfig();
 const { API_URL, NODE_ENV } = publicRuntimeConfig;
 
-type Props = {
+interface MyAppProps {
   config: {};
   pageProps: {};
-};
+}
 
-export default class MyApp extends App<Props> {
+export default class MyApp extends App<MyAppProps> {
   static defaultProps = {
     config: {
       baseURL: API_URL,
@@ -29,7 +29,7 @@ export default class MyApp extends App<Props> {
   }
 
   componentDidCatch(error, errorInfo) {
-    // console.log('CUSTOM ERROR HANDLING', error);
+    console.log('CUSTOM ERROR HANDLING', error);
     // This is needed to render errors correctly in development / production
     super.componentDidCatch(error, errorInfo);
   }

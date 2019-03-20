@@ -8,15 +8,17 @@ import DownshiftEx from '../common/downshift/DownshiftEx';
 //   loading: () => <p>...</p>,
 // });
 
-type Props = {};
+interface IndexProps {}
 
-const Index = (props: Props) => {
-  return (
-    <React.Fragment>
-      <DynamicComponentWithCustomLoading />
-      <DownshiftEx />
-    </React.Fragment>
-  );
-};
+class Index extends React.Component<IndexProps> {
+  render() {
+    return (
+      <React.Fragment>
+        <DynamicComponentWithCustomLoading />
+        <DownshiftEx />
+      </React.Fragment>
+    );
+  }
+}
 
 export default Index;
