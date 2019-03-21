@@ -4,7 +4,6 @@ import React from 'react';
 
 const { publicRuntimeConfig } = getConfig();
 const { API_URL, NODE_ENV } = publicRuntimeConfig;
-
 interface MyAppProps {
   config: {};
   pageProps: {};
@@ -29,7 +28,6 @@ export default class MyApp extends App<MyAppProps> {
   }
 
   componentDidCatch(error, errorInfo) {
-    console.log('CUSTOM ERROR HANDLING', error);
     // This is needed to render errors correctly in development / production
     super.componentDidCatch(error, errorInfo);
   }

@@ -15,7 +15,11 @@
     "skipLibCheck": true,
     "sourceMap": true,
     "strict": true,
-    "target": "esnext"
+    "target": "esnext",                       /* List of root folders whose combined content represents the structure of the project at runtime. */
+    "typeRoots": [
+      "../node_modules/@types",
+      "../@types"
+    ],
   },
   "exclude": ["node_modules", "**/*.spec.tsx?", "**/*.test.tsx?"],
   "include": ["src", "model", "./@types/*.d.ts"]

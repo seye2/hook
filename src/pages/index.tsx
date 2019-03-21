@@ -1,11 +1,11 @@
-import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import React from 'react';
 import api from '../api/createAxios';
-import Index from '../components/index'
+import Index from '../components/index';
 
 interface Props {
-  NODE_ENV: string,
+  NODE_ENV: string;
   baseURL: string;
 }
 
@@ -15,11 +15,12 @@ export default class extends React.Component<Props, {}> {
   }
   componentDidMount() {
     api.get('/posts/42');
+    // console.log(this.props);
   }
   render() {
     return (
       <>
-        <Index></Index>
+        <Index />
         <div>{this.props.baseURL}</div>
         <div>{this.props.NODE_ENV}</div>
       </>

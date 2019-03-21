@@ -16,8 +16,7 @@ const {
 
 dotenvLoad();
 
-const { NODE_ENV, API_DEV_URL, API_PROD_URL } = process.env;
-const API_URL = NODE_ENV === 'production' ? API_PROD_URL : API_DEV_URL;
+const { NODE_ENV, API_URL } = process.env;
 
 // next.js configuration
 const nextConfig = {
