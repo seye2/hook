@@ -1,3 +1,4 @@
 .next
 /node_modules
 Yarn-error*
+yarn.lock

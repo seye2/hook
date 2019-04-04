@@ -1,0 +1,37 @@
+yarn run v1.13.0
+$ cross-env node ./server/index
+
+[?25lDefining routes from exportPathMap
+Starting type checking service...
+Using 1 worker with 2048MB memory limit
+> Using external babel configuration
+> Location: "/Users/namdonghun/project/hook/.babelrc"
+Type checking in progress...
+[1;1H[0JCompiled successfully!
+
+Note that pages will be compiled when you first load them.
+> Ready on http://localhost:3000
+No type errors found
+Version: typescript 3.3.3333
+Time: 1734ms
+> Building page: /
+[1;1H[0JCompiling ...
+[1;1H[0JCompiling ...
+No type errors found
+Version: typescript 3.3.3333
+Time: 3ms
+[1;1H[0JCompiling ...
+[1;1H[0JCompiled successfully!
+
+Note that pages will be compiled when you first load them.
+> Building page: /_error
+[1;1H[0JCompiling ...
+[1;1H[0JCompiling ...
+[1;1H[0JCompiling ...
+No type errors found
+Version: typescript 3.3.3333
+Time: 10ms
+[1;1H[0JCompiled successfully!
+
+Note that pages will be compiled when you first load them.
+[?25h
